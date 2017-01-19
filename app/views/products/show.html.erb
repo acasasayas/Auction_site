@@ -1,0 +1,16 @@
+<h1> <%= @product.title %> </h1>
+
+<div>
+
+  <p style="font-weight: 700;">Description:</p>
+  <p> <%= @product.description %></p>
+  <p style="font-weight: 700;">Deadline:</p>
+  <p> <%= @product.deadline %> </p>
+
+  <% @bids.each do |bid| %>
+
+  <li style="padding-bottom: 20px;">
+    <%= bid.user.username %> made an offer of: <%= bid.amount %>€
+  </li>
+  <% end %>
+</div>

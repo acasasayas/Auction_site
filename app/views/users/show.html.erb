@@ -1,0 +1,24 @@
+<h1> Welcome to Bid Auctions </h1>
+
+<h2> <%= @user.username %> </h2>
+
+<p>
+  Mail: <%= @user.mail %>
+</p>
+<p>
+  Product's List:
+
+</p>
+
+<ul>
+    <% @products.each do |product| %>
+
+    <li style="padding-bottom: 20px;">
+      <b>Title:</b> <%= product.title %> <br>
+      <b>Description:</b> <%= product.description %> <br>
+      <b>DeadLine:</b> <%= product.deadline %> <br>
+      <a href="/products/<%=product.id%>"> Go To Product </a>
+    </li>
+
+    <% end %>
+</ul>
