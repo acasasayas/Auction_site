@@ -6,11 +6,35 @@
   <p> <%= @product.description %></p>
   <p style="font-weight: 700;">Deadline:</p>
   <p> <%= @product.deadline %> </p>
+  <p style="font-weight: 700;">Minimum Bid:</p>
+  <p> <%= @product.minimum_bid %>€ </p>
 
-  <% @bids.each do |bid| %>
+</div>
 
-  <li style="padding-bottom: 20px;">
-    <%= bid.user.username %> made an offer of: <%= bid.amount %>€
-  </li>
-  <% end %>
+<div>
+  <ul>
+    <% @bids.each do |bid| %>
+
+    <li style="padding-bottom: 20px;">
+      <%= bid.user.username %> made an offer of: <%= bid.amount %>€
+    </li>
+    <% end %>
+  </ul>
+
+</div>
+
+<div>
+  <p> Make a bid! </p>
+
+    <%= form_for @new_bid do |nb| %>
+
+      <%= nb.label :amount %><br>
+      <%= nb.text_field :amount%>
+      <br>
+      <%= nb.label :mail %> <br>
+      <%= text_field_tag :mail %>
+      <br>
+
+      <%= nb.button "Bid!"%>
+    <% end %>
 </div>

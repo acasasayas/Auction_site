@@ -1,0 +1,24 @@
+<h1>Upload your Product</h1>
+
+<div>
+  <p> New Product: </p>
+
+    <%= form_for @product do |product| %>
+
+      <%= product.label :title %><br>
+      <%= product.text_field :title%>
+      <br>
+      <%= product.label :description %> <br>
+      <%= product.text_area :description %>
+      <br>
+      <%= product.label :minimum_bid %><br>
+      <%= product.text_field :minimum_bid%>
+      <br>
+      <%= radio_button_tag(:deadline, "day") %>
+      <%= label_tag(:deadline_day, "Deadline 24h") %>
+      <%= radio_button_tag(:deadline, "week") %>
+      <%= label_tag(:deadline_week, "Deadline 1 Week") %>
+
+      <%= product.button "Upload Product!"%>
+    <% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119183952) do
+ActiveRecord::Schema.define(version: 20170120172645) do
 
   create_table "bids", force: :cascade do |t|
     t.float    "amount"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170119183952) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.float    "minimum_bid"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170119183952) do
     t.string   "mail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "password"
   end
 
 end
